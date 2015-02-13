@@ -11,21 +11,18 @@ urlpatterns = patterns('',
     url(r'^$', TemplateView.as_view(template_name='base.html')),
 
     # Examples:
-    # url(r'^$', 'moviesManager.views.home', name='home'),
-    # url(r'^moviesManager/', include('moviesManager.foo.urls')),
+    # url(r'^$', 'movies_manager.views.home', name='home'),
+    # url(r'^movies_manager/', include('movies_manager.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
+    # Include API URLs
+    url(r'^api/', include('api.urls')),
 )
 
 # Uncomment the next line to serve media files in dev.
 # urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-# if settings.DEBUG:
-#     import debug_toolbar
-    # urlpatterns += patterns('',
-    #                         url(r'^__debug__/', include(debug_toolbar.urls)),
-    #                         )

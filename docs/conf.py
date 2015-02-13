@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# moviesManager documentation build configuration file, created by
+# movies_manager documentation build configuration file, created by
 # sphinx-quickstart on Sun Feb 17 11:46:20 2013.
 #
 # This file is execfile()d with the current directory set to its containing dir.
@@ -40,7 +40,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'moviesManager'
+project = u'movies_manager'
 copyright = u'2014, ChangeMyName'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -183,7 +183,7 @@ latex_elements = {
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'moviesManager.tex', u'moviesManager Documentation',
+  ('index', 'movies_manager.tex', u'movies_manager Documentation',
    u'ChangeToMyName', 'manual'),
 ]
 
@@ -213,7 +213,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'moviesManager', u'moviesManager Documentation',
+    ('index', 'movies_manager', u'movies_manager Documentation',
      [u'ChangeToMyName'], 1)
 ]
 
@@ -227,8 +227,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  ('index', 'moviesManager', u'moviesManager Documentation',
-   u'ChangeToMyName', 'moviesManager', 'One line description of project.',
+  ('index', 'movies_manager', u'movies_manager Documentation',
+   u'ChangeToMyName', 'movies_manager', 'One line description of project.',
    'Miscellaneous'),
 ]
 
