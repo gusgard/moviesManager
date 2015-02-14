@@ -13,6 +13,11 @@ class HallSerializer(serializers.ModelSerializer):
 
 
 class MoviesSerializer(serializers.ModelSerializer):
+    hall = HallSerializer(required=False)
+
+    # def get_validation_exclusions(self):
+        # exclusions = super(MoviesSerializer, self).get_validation_exclusions()
+        # return exclusions + ['hall']
 
     class Meta:
         model = Movies
@@ -27,6 +32,8 @@ class FilmSerializer(serializers.ModelSerializer):
 
 
 class HallFilmSerializer(serializers.ModelSerializer):
+    hall = HallSerializer(required=False)
+    film = FilmSerializer(required=False)
 
     class Meta:
         model = HallFilm

@@ -40,9 +40,29 @@
         </div>
         <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li class="active"><a href="#">Dashboard</a></li>
+                <li><a id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Movies<span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                        <li><a data-toggle="modal" data-target="#modalMovies">Create</a></li>
+                    </ul>
+                <li>
+                <li><a id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Hall<span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                        <li><a data-toggle="modal" data-target="#modalHall">Create</a></li>
+                    </ul>
+                <li>
+                <li><a id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Film<span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                        <li><a data-toggle="modal" data-target="#modalFilm">Create</a></li>
+                    </ul>
+                <li>
+                <li><a id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Film per Hall<span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                        <li><a data-toggle="modal" data-target="#modalFilmHallCrate">Create</a></li>
+                        <li><a data-toggle="modal" data-target="#modalFilmHallCrate">Update</a></li>
+                        <li><a data-toggle="modal" data-target="#modalFilmHallCrate">Delete</a></li>
+                    </ul>
+                <li>
             </ul>
         </div>
     </div>
@@ -61,8 +81,45 @@
                 </div>
                 <p class="well">{{ film.name }}</p>
             </div>
+
+    <ul class="unstyled">
+        <li ng-repeat="movie in movies">
+            <input type="checkbox" ng-model="movie.id">
+            <span>{{movie.hall.attendant}}</span>
+            <li ng-repeat="hall in movie.hall">
+                <input type="checkbox" ng-model="movie.id">
+                <span>{{movie.hall.attendant}}</span>
+                <button ng-click="">
+                    Show Hall
+                </button>
+            </li>
+        </li>
+    </ul>
         {% endverbatim %}
     {% endblock %}
+</div>
+
+{% csrf_token %}
+
+<div class="container" ng-controller="AppModal">
+    <div class="modal fade pg-show-modal" id="modalHall" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title">Hall</h4>
+                </div>
+                <div class="modal-body">
+                    <input type="text" class="form-control" ng-model="number" placeholder="{{ Number }}">
+                    <input type="text" class="form-control" placeholder="Attendant">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" ng-click="" >Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <!-- Le javascript
